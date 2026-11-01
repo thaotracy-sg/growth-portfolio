@@ -772,48 +772,47 @@
                     </div>
 
                     <!-- Form -->
-                    <form id="contactForm" class="mt-8 space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="fullName" class="block text-xs font-bold text-slate-300 uppercase mb-2">Your Name</label>
-                                <input type="text" id="fullName" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-xs font-bold text-slate-300 uppercase mb-2">Work Email</label>
-                                <input type="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
-                            </div>
-                        </div>
+<form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="mt-8 space-y-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+            <label for="fullName" class="block text-xs font-bold text-slate-300 uppercase mb-2">Your Name</label>
+            <input type="text" id="fullName" name="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+        </div>
+        <div>
+            <label for="email" class="block text-xs font-bold text-slate-300 uppercase mb-2">Work Email</label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+        </div>
+    </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="serviceType" class="block text-xs font-bold text-slate-300 uppercase mb-2">Primary Service Interest</label>
-                                <select id="serviceType" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
-                                    <option value="growth">Growth Performance Marketing</option>
-                                    <option value="analytics">Automated Analytics & Power BI</option>
-                                    <option value="full">Full Growth & Analytics Audit</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="budget" class="block text-xs font-bold text-slate-300 uppercase mb-2">Monthly Ad Budget</label>
-                                <select id="budget" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
-                                    <option value="5k">$3,000 - $5,000 / month</option>
-                                    <option value="15k">$5,000 - $15,000 / month</option>
-                                    <option value="50k">$15,000 - $50,000 / month</option>
-                                    <option value="50k+">$50,000+ / month</option>
-                                </select>
-                            </div>
-                        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+            <label for="serviceType" class="block text-xs font-bold text-slate-300 uppercase mb-2">Primary Service Interest</label>
+            <select id="serviceType" name="service" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                <option value="Growth Performance Marketing">Growth Performance Marketing</option>
+                <option value="Automated Analytics & Power BI">Automated Analytics & Power BI</option>
+                <option value="Full Growth & Analytics Audit">Full Growth & Analytics Audit</option>
+            </select>
+        </div>
+        <div>
+            <label for="budget" class="block text-xs font-bold text-slate-300 uppercase mb-2">Monthly Ad Budget</label>
+            <select id="budget" name="budget" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                <option value="$3,000 - $5,000 / month">$3,000 - $5,000 / month</option>
+                <option value="$5,000 - $15,000 / month">$5,000 - $15,000 / month</option>
+                <option value="$15,000 - $50,000 / month">$15,000 - $50,000 / month</option>
+                <option value="$50,000+ / month">$50,000+ / month</option>
+            </select>
+        </div>
+    </div>
 
-                        <div>
-                            <label for="notes" class="block text-xs font-bold text-slate-300 uppercase mb-2">Project Scope or Goals</label>
-                            <textarea id="notes" rows="4" placeholder="Mention your target SEA markets, current CPL challenges, or BI dashboard requirements..." class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors resize-none text-sm"></textarea>
-                        </div>
+    <div>
+        <label for="notes" class="block text-xs font-bold text-slate-300 uppercase mb-2">Project Scope or Goals</label>
+        <textarea id="notes" name="message" rows="4" placeholder="Mention your target SEA markets, current CPL challenges, or BI dashboard requirements..." class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors resize-none text-sm"></textarea>
+    </div>
 
-                        <button type="submit" class="w-full py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 text-center uppercase text-xs tracking-wider">
-                            Submit Inquiry
-                        </button>
-                    </form>
-
+    <button type="submit" class="w-full py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 text-center uppercase text-xs tracking-wider">
+        Submit Inquiry
+    </button>
+</form>
                 </div>
             </div>
         </section>
