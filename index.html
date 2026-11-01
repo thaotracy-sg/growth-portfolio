@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracy Nguyen | Growth Marketing & Commercial Data Analytics Lead</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22'
+                        },
+                        brand: {
+                            deep: '#03140b',
+                            dark: '#041f12',
+                            card: 'rgba(6, 42, 25, 0.70)',
+                            gold: '#fbbf24',
+                            accent: '#2dd4bf'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .gradient-emerald-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.22) 0%, rgba(3, 20, 11, 0) 75%);
+        }
+        .glass-panel {
+            background: rgba(6, 38, 23, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(52, 211, 153, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3);
+            transform: translateY(-4px);
+        }
+        /* Custom range sliders styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #064e3b;
+            border-radius: 4px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #34d399;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -7px;
+            box-shadow: 0 0 14px rgba(52, 211, 153, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-[#03140b] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-emerald-900/40 bg-[#03140b]/90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-emerald-400 to-amber-300 p-[2px] transition-transform group-hover:scale-105">
+                    <div class="w-full h-full bg-[#03140b] rounded-[10px] flex items-center justify-center">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold tracking-tight text-white leading-none">
+                        Tracy Nguyen
+                    </span>
+                    <span class="text-[10px] font-semibold tracking-wider uppercase text-emerald-400 mt-1">
+                        Growth & Data Analyst Lead
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-7">
+                <a href="#about" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-emerald-400 transition-colors">About</a>
+                <a href="#values" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-emerald-400 transition-colors">Core Pillars</a>
+                <a href="#services" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-emerald-400 transition-colors">Key Products</a>
+                <a href="#case-studies" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-emerald-400 transition-colors">Case Studies</a>
+                <a href="#calculator" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-emerald-400 transition-colors">ROI Calculator</a>
+            </nav>
+
+            <!-- Social Links & CTA Button -->
+            <div class="flex items-center space-x-3">
+                <a href="https://github.com/thaotracy-sg" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex p-2.5 rounded-xl glass-panel text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all" title="GitHub Profile">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20">
+                    Get in Touch
+                    <i data-lucide="arrow-right" class="w-4 h-4 ml-1.5"></i>
+                </a>
+
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-emerald-950 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-emerald-900/60 bg-[#03140b] px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-emerald-400 font-medium">About</a>
+            <a href="#values" class="block py-2 text-slate-300 hover:text-emerald-400 font-medium">Core Pillars</a>
+            <a href="#services" class="block py-2 text-slate-300 hover:text-emerald-400 font-medium">Key Products</a>
+            <a href="#case-studies" class="block py-2 text-slate-300 hover:text-emerald-400 font-medium">Case Studies</a>
+            <a href="#calculator" class="block py-2 text-slate-300 hover:text-emerald-400 font-medium">ROI Calculator</a>
+            <div class="pt-2 flex items-center space-x-4">
+                <a href="https://github.com/thaotracy-sg" target="_blank" class="text-slate-300 hover:text-emerald-400 flex items-center text-xs font-bold">
+                    <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> GitHub
+                </a>
+                <a href="mailto:nguyenthithuthao0309@gmail.com" class="text-slate-300 hover:text-emerald-400 flex items-center text-xs font-bold">
+                    <i data-lucide="mail" class="w-4 h-4 mr-1.5"></i> Email
+                </a>
+            </div>
+            <a href="#contact" class="w-full mt-4 flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-emerald-400 to-amber-300">
+                Get in Touch
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+
+        <!-- Hero Section -->
+        <section id="about" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 gradient-emerald-bg">
+            <div class="absolute inset-0 bg-[radial-gradient(#064e3b_1px,transparent_1px)] [background-size:32px_32px] opacity-25"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Left Content -->
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-emerald-500/30 text-emerald-300 text-xs font-semibold tracking-wide">
+                            <i data-lucide="globe" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Singapore • Vietnam • Malaysia • Indonesia</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                            Growth Marketing & <br class="hidden sm:inline"/>
+                            <span class="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
+                                Commercial Data Analytics
+                            </span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl font-medium text-emerald-300/90 leading-relaxed">
+                            Bridging 10+ Years of SEA Growth Marketing with Advanced Analytics <span class="text-slate-300 font-normal">(SQL, Python, Power BI, M.Sc. SUSS)</span>
+                        </p>
+
+                        <p class="text-slate-300 text-sm sm:text-base max-w-2xl font-normal leading-relaxed">
+                            Helping commercial teams and businesses scale across Southeast Asia by linking every ad dollar directly to unit economics ($LTV/CAC$), automating analytics reporting pipelines, and designing high-ROAS user acquisition funnels.
+                        </p>
+
+                        <!-- Tech Stack Badges -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">SQL</span>
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">Python</span>
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">Power BI (DAX)</span>
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">GA4 / GTM</span>
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">HubSpot</span>
+                            <span class="px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-mono text-emerald-400">AppsFlyer</span>
+                        </div>
+
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#case-studies" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 hover:brightness-110 transition-all shadow-xl shadow-emerald-500/20 text-center flex items-center justify-center text-xs uppercase tracking-wider">
+                                View Case Studies
+                                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                            <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-slate-200 glass-panel hover:bg-emerald-900/40 hover:border-emerald-500/40 transition-all text-center flex items-center justify-center text-xs uppercase tracking-wider">
+                                Get In Touch
+                                <i data-lucide="mail" class="w-4 h-4 ml-2 text-emerald-400"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Right Profile Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <!-- Background Glow -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-amber-400 rounded-3xl blur-xl opacity-35"></div>
+                            
+                            <div class="relative glass-panel rounded-3xl p-6 sm:p-7 border border-emerald-500/30">
+                                <div class="relative h-80 sm:h-88 rounded-2xl overflow-hidden mb-6 border border-emerald-500/20 shadow-inner bg-emerald-950/40 flex items-center justify-center">
+                                    <img src="profile.png" 
+                                         alt="Tracy Nguyen" 
+                                         onerror="this.src='https://placehold.co/600x800/062a19/34d399?text=Tracy+Nguyen'" 
+                                         class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-[#03140b] via-transparent to-transparent pointer-events-none"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <h3 class="text-2xl font-bold text-white">Tracy Nguyen</h3>
+                                        <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Growth & Analytics Lead • M.Sc. SUSS</p>
+                                    </div>
+                                </div>
+
+                                <!-- Key Quick Stats -->
+                                <div class="grid grid-cols-3 gap-3 text-center">
+                                    <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-800/40">
+                                        <div class="text-xl font-extrabold text-amber-300">US$1.5M+</div>
+                                        <div class="text-[9px] text-slate-300 uppercase font-medium mt-0.5">Portfolio Managed</div>
+                                    </div>
+                                    <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-800/40">
+                                        <div class="text-xl font-extrabold text-emerald-400">68%</div>
+                                        <div class="text-[9px] text-slate-300 uppercase font-medium mt-0.5">Max CPL Reduced</div>
+                                    </div>
+                                    <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-800/40">
+                                        <div class="text-xl font-extrabold text-white">7</div>
+                                        <div class="text-[9px] text-slate-300 uppercase font-medium mt-0.5">APAC Markets</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section (4 Pillars) -->
+        <section id="values" class="py-24 bg-[#041a0e] relative border-t border-emerald-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Core Value Proposition</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Strategic Growth Grounded in Commercial Rigor</p>
+                    <p class="mt-4 text-slate-400 text-sm sm:text-base">Combining executive commercial strategy with hands-on statistical modeling and automated business intelligence.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Pillar 1 -->
+                    <div class="glass-panel p-6 rounded-2xl glass-card-hover transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+                                <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">1. Commercial Rigor & Revenue</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Connecting ad spend and campaign leads directly to top-line revenue, run-rate tracking, unit economics ($LTV / CAC$), and P&L targets.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/40 text-[11px] font-mono text-emerald-400">
+                            Managed $1.5M portfolios generating $250K+ revenue.
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="glass-panel p-6 rounded-2xl glass-card-hover transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-300 mb-5">
+                                <i data-lucide="git-merge" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">2. Full-Funnel Lifecycle</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Full ownership from initial ad click to lead capture, MQL scoring, CRM nurture workflows, customer conversion, and retention cohorts.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/40 text-[11px] font-mono text-amber-300">
+                            Achieved 98% Lead-to-MQL conversion rate.
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="glass-panel p-6 rounded-2xl glass-card-hover transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-300 mb-5">
+                                <i data-lucide="database" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">3. Data-First Analytics</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Supported by M.Sc. Data Analytics (SUSS). Skilled in SQL, Python, Power BI, DAX, panel data modeling, and statistical forecasting.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/40 text-[11px] font-mono text-teal-300">
+                            Redesigned regional BI dashboards across 7 APAC markets.
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="glass-panel p-6 rounded-2xl glass-card-hover transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">4. Lean AI & Automation</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Operating fast under tight budgets by automating reporting pipelines, building live alert triggers, and leveraging AI tools for ad iteration.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/40 text-[11px] font-mono text-emerald-400">
+                            Automated reporting & continuous A/B test loops.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Offerings Section (2 Products Focus) -->
+        <section id="services" class="py-24 relative border-t border-emerald-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Key Offerings</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Core Products & Solutions</p>
+                    <p class="mt-4 text-slate-400 text-sm sm:text-base">Specialized growth execution and automated analytics tailored to SEA enterprise and scale-up commercial teams.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Product 1: Growth Performance Marketing -->
+                    <div class="glass-panel p-8 rounded-3xl border border-emerald-500/30 glass-card-hover relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute -right-8 -top-8 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl"></div>
+                        
+                        <div>
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold mb-6">
+                                <i data-lucide="target" class="w-4 h-4"></i>
+                                <span>PRODUCT 01</span>
+                            </div>
+                            <h3 class="text-2xl font-black text-white mb-3">Growth Performance Marketing</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                End-to-end user acquisition, ad expenditure optimization, and audience funnel strategy designed for maximum CPL reduction and scalable ROAS.
+                            </p>
+
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Multi-Channel Paid Acquisition:</strong> Meta (FB/IG), Google Ads, TikTok Ads, LinkedIn Ads, and Zalo targeting.</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Creative-First Testing Frameworks:</strong> Rapid A/B testing of angles and copy variations (proven to lower CPL by up to 68%).</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Lead Quality & Segment Tuning:</strong> Audience profiling by life-stage, business size, and regional behavior in SG, VN, MY, ID.</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Mobile App Acquisition:</strong> Mobile install tracking via AppsFlyer, CPI optimization, and post-install activation.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-950/60 border border-emerald-800/40 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-300">Deliverables:</span>
+                            <span class="text-xs font-mono font-bold text-emerald-400">Campaign Setup • Creative Matrix • Funnel Audit</span>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Automated Analytics & Reporting -->
+                    <div class="glass-panel p-8 rounded-3xl border border-amber-500/30 glass-card-hover relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute -right-8 -top-8 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+
+                        <div>
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold mb-6">
+                                <i data-lucide="bar-chart-4" class="w-4 h-4"></i>
+                                <span>PRODUCT 02</span>
+                            </div>
+                            <h3 class="text-2xl font-black text-white mb-3">Automated Analytics & Reporting</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                Custom data architecture and BI dashboarding that eliminates spreadsheet chaos, automates CRM workflows, and provides real-time revenue visibility.
+                            </p>
+
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Live BI Dashboard Development:</strong> Power BI (DAX), GA4, SQL ETL, and Google Tag Manager custom tracking.</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>CRM & Lead Scoring Workflows:</strong> HubSpot automation for MQL scoring, instant hot lead alerts, and automated follow-ups.</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Commercial Revenue Modeling:</strong> Cohort retention modeling, revenue run-rate forecasting, and category share validation.</span>
+                                </li>
+                                <li class="flex items-start text-xs text-slate-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2.5 shrink-0 mt-0.5"></i>
+                                    <span><strong>Regional Multi-Market Rollouts:</strong> Standardized reporting templates across multi-country APAC sales teams.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-amber-950/40 border border-amber-800/40 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-300">Deliverables:</span>
+                            <span class="text-xs font-mono font-bold text-amber-300">Power BI Dashboards • SQL Scripts • HubSpot Pipelines</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Filterable Case Studies Section -->
+        <section id="case-studies" class="py-24 bg-[#041a0e] relative border-t border-emerald-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Proven Track Record</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Featured Regional Case Studies</p>
+                    <p class="mt-4 text-slate-400 text-sm sm:text-base">Real metrics and growth strategies executed across Singapore, Vietnam, Malaysia, and Indonesia.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+                    <button class="filter-btn active px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20" data-filter="all">All Industries</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-950/60 border border-emerald-800/40 text-slate-300 hover:text-white hover:border-emerald-500" data-filter="beauty">Beauty & Clinic</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-950/60 border border-emerald-800/40 text-slate-300 hover:text-white hover:border-emerald-500" data-filter="fintech">Fintech</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-950/60 border border-emerald-800/40 text-slate-300 hover:text-white hover:border-emerald-500" data-filter="insurance">Insurance</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-950/60 border border-emerald-800/40 text-slate-300 hover:text-white hover:border-emerald-500" data-filter="fmcg">FMCG</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold transition-all bg-emerald-950/60 border border-emerald-800/40 text-slate-300 hover:text-white hover:border-emerald-500" data-filter="education">Education</button>
+                </div>
+
+                <!-- Case Studies Cards Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Case Study 1: Beauty -->
+                    <div class="case-card glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/20 glass-card-hover" data-category="beauty">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Beauty / Healthcare</span>
+                                <i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1">Premium Aesthetic Clinic</h3>
+                            <p class="text-xs text-amber-300 mb-5 font-semibold uppercase tracking-wider">Free Trial & Appointment Acquisition</p>
+                            
+                            <!-- Challenge -->
+                            <div class="mb-4">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1.5 text-rose-400"></i> Challenge
+                                </span>
+                                <p class="text-xs text-slate-400 leading-relaxed">High CPLs and low appointment turn-ups when attempting to drive free trial bookings to enrich data pool.</p>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="mb-6">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-emerald-400"></i> Approach
+                                </span>
+                                <ul class="text-xs text-slate-400 space-y-1 pl-4 list-disc">
+                                    <li>Lifestyle-focused ad angles & personalized creative testing.</li>
+                                    <li>Landing page optimization for credibility & instant conversion.</li>
+                                    <li>Automated SMS/WhatsApp appointment reminders.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Outcomes -->
+                        <div class="pt-4 border-t border-emerald-900/60 grid grid-cols-2 gap-3 text-center bg-emerald-950/40 p-3 rounded-xl">
+                            <div>
+                                <div class="text-2xl font-black text-emerald-400">68%</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Reduction in CPL</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-black text-amber-300">1 in 3</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Converted to Visits</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2: Fintech -->
+                    <div class="case-card glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/20 glass-card-hover" data-category="fintech">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-400 border border-teal-500/30">Fintech (SME Neobank)</span>
+                                <i data-lucide="credit-card" class="w-5 h-5 text-teal-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1">Singapore & Indonesia Neobank</h3>
+                            <p class="text-xs text-amber-300 mb-5 font-semibold uppercase tracking-wider">Lead Funnel & Quality Audit</p>
+                            
+                            <!-- Challenge -->
+                            <div class="mb-4">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1.5 text-rose-400"></i> Challenge
+                                </span>
+                                <p class="text-xs text-slate-400 leading-relaxed">Heavy ad spend with low ROI due to high volume of unqualified or inactive SME leads in sales pipeline.</p>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="mb-6">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-teal-400"></i> Approach
+                                </span>
+                                <ul class="text-xs text-slate-400 space-y-1 pl-4 list-disc">
+                                    <li>Audited full funnel across ad platforms, pages, and CRM.</li>
+                                    <li>Audience segmentation by business size & regional industry.</li>
+                                    <li>HubSpot workflows to score and automatically nurture leads.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Outcomes -->
+                        <div class="pt-4 border-t border-emerald-900/60 text-center bg-emerald-950/40 p-3 rounded-xl">
+                            <div class="text-3xl font-black text-emerald-400">1.5X</div>
+                            <div class="text-[10px] text-slate-400 uppercase font-medium">Lead-to-MQL Conversion Rate</div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3: Insurance -->
+                    <div class="case-card glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/20 glass-card-hover" data-category="insurance">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Insurance</span>
+                                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1">Regional Insurance Brand</h3>
+                            <p class="text-xs text-amber-300 mb-5 font-semibold uppercase tracking-wider">Financial Consultation Lead Gen</p>
+                            
+                            <!-- Challenge -->
+                            <div class="mb-4">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1.5 text-rose-400"></i> Challenge
+                                </span>
+                                <p class="text-xs text-slate-400 leading-relaxed">Poor lead quality and high drop-off rate in the acquisition funnel for financial advisory appointments.</p>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="mb-6">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-emerald-400"></i> Approach
+                                </span>
+                                <ul class="text-xs text-slate-400 space-y-1 pl-4 list-disc">
+                                    <li>Life-stage targeted creatives (young family, working adult).</li>
+                                    <li>A/B tested benefit-driven copy vs incentive lead magnets.</li>
+                                    <li>Instant CRM tagging & automated alerts for high-value hot leads.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Outcomes -->
+                        <div class="pt-4 border-t border-emerald-900/60 text-center bg-emerald-950/40 p-3 rounded-xl">
+                            <div class="text-3xl font-black text-amber-300">35% Drop</div>
+                            <div class="text-[10px] text-slate-400 uppercase font-medium">In Cost Per Lead (CPL)</div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4: FMCG -->
+                    <div class="case-card glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/20 glass-card-hover" data-category="fmcg">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30">FMCG (Parenting)</span>
+                                <i data-lucide="baby" class="w-5 h-5 text-amber-300"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1">Formula Milk Brand (Vietnam)</h3>
+                            <p class="text-xs text-amber-300 mb-5 font-semibold uppercase tracking-wider">Pregnant Moms Sampling Funnel</p>
+                            
+                            <!-- Challenge -->
+                            <div class="mb-4">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1.5 text-rose-400"></i> Challenge
+                                </span>
+                                <p class="text-xs text-slate-400 leading-relaxed">Rising CPLs and limited access to verified online parenting data to acquire expectant mothers.</p>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="mb-6">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-amber-300"></i> Approach
+                                </span>
+                                <ul class="text-xs text-slate-400 space-y-1 pl-4 list-disc">
+                                    <li>Interest signals, lookalikes & 1st party parenting platform data.</li>
+                                    <li>Trimester-specific creative variations for relevance.</li>
+                                    <li>Mobile-friendly sampling page & community partnerships.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Outcomes -->
+                        <div class="pt-4 border-t border-emerald-900/60 grid grid-cols-2 gap-3 text-center bg-emerald-950/40 p-3 rounded-xl">
+                            <div>
+                                <div class="text-2xl font-black text-emerald-400">45%</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Reduction in CPL</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-black text-amber-300">10,000</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Leads in 3 Months</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 5: Education -->
+                    <div class="case-card glass-panel rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/20 glass-card-hover" data-category="education">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-teal-500/10 text-teal-300 border border-teal-500/30">Education</span>
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-teal-300"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1">Regional Preschool Chain</h3>
+                            <p class="text-xs text-amber-300 mb-5 font-semibold uppercase tracking-wider">Branch Enrollment Funnel</p>
+                            
+                            <!-- Challenge -->
+                            <div class="mb-4">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 mr-1.5 text-rose-400"></i> Challenge
+                                </span>
+                                <p class="text-xs text-slate-400 leading-relaxed">High CPL, low appointment conversion, and poor lead quality failing to drive actual school enrollments.</p>
+                            </div>
+
+                            <!-- Approach -->
+                            <div class="mb-6">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wide flex items-center mb-1">
+                                    <i data-lucide="wrench" class="w-3.5 h-3.5 mr-1.5 text-teal-300"></i> Approach
+                                </span>
+                                <ul class="text-xs text-slate-400 space-y-1 pl-4 list-disc">
+                                    <li>Hyper-local targeting by branch radius & parent interests.</li>
+                                    <li>A/B tested curriculum, parent testimonials & virtual tours.</li>
+                                    <li>Lead filtering (child's age/location) + real-time performance dash.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Outcomes -->
+                        <div class="pt-4 border-t border-emerald-900/60 grid grid-cols-2 gap-3 text-center bg-emerald-950/40 p-3 rounded-xl">
+                            <div>
+                                <div class="text-2xl font-black text-emerald-400">45%</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Lower CPL</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-black text-amber-300">+25%</div>
+                                <div class="text-[10px] text-slate-400 uppercase font-medium">Contactable Rate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive ROI & Time Savings Calculator Widget -->
+        <section id="calculator" class="py-24 relative border-t border-emerald-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Info Text -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+                            <i data-lucide="calculator" class="w-4 h-4"></i>
+                            <span>Interactive Efficiency Estimator</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Calculate your spend efficiency & time savings</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Generic ad targeting inflates acquisition costs, while manual Excel reporting drains valuable analytical bandwidth. Adjust the parameters to see your projected savings.
+                        </p>
+                        
+                        <!-- Quick Presets -->
+                        <div class="p-4 rounded-2xl glass-panel border border-emerald-500/20 space-y-3">
+                            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider block">Apply Case Study Presets:</span>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="preset-btn px-3 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700/60 text-xs font-bold text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 transition-all" data-reduction="35">35% CPL (Insurance)</button>
+                                <button class="preset-btn px-3 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700/60 text-xs font-bold text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 transition-all" data-reduction="45">45% CPL (FMCG)</button>
+                                <button class="preset-btn px-3 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700/60 text-xs font-bold text-amber-300 hover:bg-amber-400 hover:text-slate-950 transition-all" data-reduction="68">68% CPL (Clinic)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Card -->
+                    <div class="lg:col-span-7 glass-panel p-6 sm:p-10 rounded-3xl border border-emerald-500/30 shadow-2xl relative">
+                        <div class="space-y-6">
+                            
+                            <!-- Slider 1: Monthly Ad Spend -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label for="adSpend" class="text-xs font-bold uppercase text-slate-300">Monthly Ad Budget ($ USD)</label>
+                                    <span id="spendVal" class="text-base font-bold text-emerald-400">$10,000</span>
+                                </div>
+                                <input type="range" id="adSpend" min="2000" max="50000" step="1000" value="10000" class="w-full">
+                            </div>
+
+                            <!-- Slider 2: Target CPL Reduction % -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label for="reductionPct" class="text-xs font-bold uppercase text-slate-300">Target CPL Reduction %</label>
+                                    <span id="reductionVal" class="text-base font-bold text-amber-300">45%</span>
+                                </div>
+                                <input type="range" id="reductionPct" min="15" max="70" step="5" value="45" class="w-full">
+                            </div>
+
+                            <!-- Slider 3: Weekly Manual Reporting Hours -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label for="reportingHours" class="text-xs font-bold uppercase text-slate-300">Current Weekly Manual Reporting (Hours)</label>
+                                    <span id="hoursVal" class="text-base font-bold text-teal-300">12 hrs/wk</span>
+                                </div>
+                                <input type="range" id="reportingHours" min="2" max="40" step="2" value="12" class="w-full">
+                            </div>
+
+                        </div>
+
+                        <!-- Results Card -->
+                        <div class="mt-8 p-6 rounded-2xl bg-[#03140b] border border-emerald-500/30 grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+                            <div class="border-b sm:border-b-0 sm:border-r border-emerald-900/60 pb-4 sm:pb-0 sm:pr-4">
+                                <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Est. Monthly Budget Saved</span>
+                                <div id="calcBudgetSaved" class="text-3xl font-black text-amber-300 mt-2">$4,500</div>
+                                <span class="text-[10px] text-slate-500">at same lead volume</span>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Est. Annual Reporting Time Saved</span>
+                                <div id="calcHoursSaved" class="text-3xl font-black text-emerald-400 mt-2">500+ Hours</div>
+                                <span class="text-[10px] text-slate-500">via BI & SQL automation</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-[#041a0e] relative border-t border-emerald-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-emerald-500/30 shadow-2xl">
+                    
+                    <div class="text-center">
+                        <h2 class="text-3xl font-black text-white sm:text-4xl">Let's Discuss Growth Opportunities</h2>
+                        <p class="mt-3 text-slate-300 text-sm">Ready to scale user acquisition or build automated analytics pipelines? Reach out directly.</p>
+
+                        <!-- Direct Email & Social Badges -->
+                        <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+                            <a href="mailto:nguyenthithuthao0309@gmail.com" class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-mono hover:border-emerald-400 transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+                                <span>nguyenthithuthao0309@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/thaotracy-sg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-950 border border-emerald-500/40 text-slate-300 text-xs font-mono hover:border-emerald-400 transition-colors">
+                                <i data-lucide="github" class="w-4 h-4 text-emerald-400"></i>
+                                <span>github.com/thaotracy-sg</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Form Success Notification -->
+                    <div id="formSuccess" class="hidden mt-8 p-6 bg-emerald-500/15 border border-emerald-500/40 rounded-2xl text-center space-y-2">
+                        <i data-lucide="check-circle-2" class="w-12 h-12 text-emerald-400 mx-auto"></i>
+                        <h4 class="text-xl font-bold text-white">Message Received!</h4>
+                        <p class="text-xs text-slate-300">Thank you. Tracy will review your business requirements and reply within 24 hours.</p>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="contactForm" class="mt-8 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-xs font-bold text-slate-300 uppercase mb-2">Your Name</label>
+                                <input type="text" id="fullName" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-300 uppercase mb-2">Work Email</label>
+                                <input type="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="serviceType" class="block text-xs font-bold text-slate-300 uppercase mb-2">Primary Service Interest</label>
+                                <select id="serviceType" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                                    <option value="growth">Growth Performance Marketing</option>
+                                    <option value="analytics">Automated Analytics & Power BI</option>
+                                    <option value="full">Full Growth & Analytics Audit</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="budget" class="block text-xs font-bold text-slate-300 uppercase mb-2">Monthly Ad Budget</label>
+                                <select id="budget" class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white focus:outline-none focus:border-emerald-400 transition-colors text-sm">
+                                    <option value="5k">$3,000 - $5,000 / month</option>
+                                    <option value="15k">$5,000 - $15,000 / month</option>
+                                    <option value="50k">$15,000 - $50,000 / month</option>
+                                    <option value="50k+">$50,000+ / month</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="notes" class="block text-xs font-bold text-slate-300 uppercase mb-2">Project Scope or Goals</label>
+                            <textarea id="notes" rows="4" placeholder="Mention your target SEA markets, current CPL challenges, or BI dashboard requirements..." class="w-full px-4 py-3 rounded-xl bg-[#03140b] border border-emerald-900/80 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 transition-colors resize-none text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 text-center uppercase text-xs tracking-wider">
+                            Submit Inquiry
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-emerald-900/40 bg-[#021008] py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-amber-300 p-[1px]">
+                    <div class="w-full h-full bg-[#03140b] rounded-[7px] flex items-center justify-center">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i>
+                    </div>
+                </div>
+                <span class="font-bold text-white text-sm">Tracy Nguyen</span>
+            </div>
+
+            <p>© 2026 Tracy Nguyen. Growth & Analytics Lead (Singapore, Vietnam, Malaysia, Indonesia).</p>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://github.com/thaotracy-sg" target="_blank" class="hover:text-emerald-400 transition-colors">GitHub</a>
+                <a href="mailto:nguyenthithuthao0309@gmail.com" class="hover:text-emerald-400 transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Render Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Nav Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Case Studies Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const caseCards = document.querySelectorAll('.case-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-emerald-500', 'text-slate-950');
+                    b.classList.add('bg-emerald-950/60', 'text-slate-300');
+                });
+                btn.classList.add('active', 'bg-emerald-500', 'text-slate-950');
+                btn.classList.remove('bg-emerald-950/60', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                caseCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Interactive ROI & Time Savings Calculator
+        const spendInput = document.getElementById('adSpend');
+        const reductionInput = document.getElementById('reductionPct');
+        const hoursInput = document.getElementById('reportingHours');
+
+        const spendVal = document.getElementById('spendVal');
+        const reductionVal = document.getElementById('reductionVal');
+        const hoursVal = document.getElementById('hoursVal');
+
+        const calcBudgetSaved = document.getElementById('calcBudgetSaved');
+        const calcHoursSaved = document.getElementById('calcHoursSaved');
+
+        function updateCalculator() {
+            const spend = parseFloat(spendInput.value);
+            const reduction = parseFloat(reductionInput.value) / 100;
+            const hours = parseFloat(hoursInput.value);
+
+            spendVal.textContent = `$${spend.toLocaleString()}`;
+            reductionVal.textContent = `${Math.round(reduction * 100)}%`;
+            hoursVal.textContent = `${hours} hrs/wk`;
+
+            // Savings calculation
+            const budgetSaved = spend * reduction * 0.8; 
+            const annualHoursSaved = Math.round(hours * 0.85 * 52);
+
+            calcBudgetSaved.textContent = `$${Math.round(budgetSaved).toLocaleString()}`;
+            calcHoursSaved.textContent = `${annualHoursSaved} Hours`;
+        }
+
+        spendInput.addEventListener('input', updateCalculator);
+        reductionInput.addEventListener('input', updateCalculator);
+        hoursInput.addEventListener('input', updateCalculator);
+
+        // Preset buttons handler
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetReduction = btn.getAttribute('data-reduction');
+                reductionInput.value = targetReduction;
+                updateCalculator();
+            });
+        });
+
+        // Initial Calculation
+        updateCalculator();
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.classList.add('hidden');
+            formSuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
